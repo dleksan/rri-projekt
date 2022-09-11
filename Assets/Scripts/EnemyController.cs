@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed=10f;
+    public float speedMod=1f;
     public Transform target;
     private Path thePath;
     private int currentPoint;
@@ -40,7 +41,7 @@ public class EnemyController : MonoBehaviour
             if(reachedEnd==false)
             {
                 transform.LookAt(thePath.points[currentPoint]);
-                transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position, moveSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position, moveSpeed * Time.deltaTime * speedMod);
 
                 if(Vector3.Distance(transform.position,thePath.points[currentPoint].position)<.01f)
                 {
@@ -55,7 +56,7 @@ public class EnemyController : MonoBehaviour
             } 
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, theCastle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime);
+                transform.position = Vector3.MoveTowards(transform.position, theCastle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime * speedMod);
                 attackCounter -= Time.deltaTime;
                 if(attackCounter<=0)
                 {
