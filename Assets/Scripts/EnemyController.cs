@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float moveSpeed=10f;
+    [HideInInspector]
     public float speedMod=1f;
-    public Transform target;
+    
     private Path thePath;
     private int currentPoint;
     private bool reachedEnd;
@@ -17,6 +18,9 @@ public class EnemyController : MonoBehaviour
     private Castle theCastle;
 
     private int selectedAttackPoint;
+
+    public bool isFlying;
+    public float flyHeight;
     void Start()
     {
         if(thePath==null)
@@ -30,6 +34,12 @@ public class EnemyController : MonoBehaviour
         }
         
         attackCounter = timeBetweenAttacks;
+
+        if(isFlying)
+        {
+            transform.position += Vector3.up * flyHeight;
+            currentPoint = thePath.points.Length - 1;
+        }
     }
 
     // Update is called once per frame
@@ -41,22 +51,50 @@ public class EnemyController : MonoBehaviour
             if(reachedEnd==false)
             {
                 transform.LookAt(thePath.points[currentPoint]);
-                transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position, moveSpeed * Time.deltaTime * speedMod);
 
-                if(Vector3.Distance(transform.position,thePath.points[currentPoint].position)<.01f)
+                if(!isFlying)
                 {
-                    currentPoint += 1;
-                    if(currentPoint>=thePath.points.Length)
-                    {
-                        reachedEnd = true;
 
-                        selectedAttackPoint = Random.Range(0, theCastle.attackPoints.Length);
+                    transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position, moveSpeed * Time.deltaTime * speedMod);
+
+                    if(Vector3.Distance(transform.position,thePath.points[currentPoint].position)<.01f)
+                    {
+                        currentPoint += 1;
+                        if(currentPoint>=thePath.points.Length)
+                        {
+                            reachedEnd = true;
+
+                            selectedAttackPoint = Random.Range(0, theCastle.attackPoints.Length);
+                        }
                     }
                 }
+                else
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, thePath.points[currentPoint].position + (Vector3.up *flyHeight), moveSpeed * Time.deltaTime * speedMod);
+
+                    if (Vector3.Distance(transform.position, thePath.points[currentPoint].position + (Vector3.up * flyHeight)) < .01f)
+                    {
+                        currentPoint += 1;
+                        if (currentPoint >= thePath.points.Length)
+                        {
+                            reachedEnd = true;
+
+                            selectedAttackPoint = Random.Range(0, theCastle.attackPoints.Length);
+                        }
+                    }
+                }
+
             } 
             else
             {
-                transform.position = Vector3.MoveTowards(transform.position, theCastle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime * speedMod);
+                if(!isFlying)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, theCastle.attackPoints[selectedAttackPoint].position, moveSpeed * Time.deltaTime * speedMod);
+                }
+                else
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, theCastle.attackPoints[selectedAttackPoint].position + (Vector3.up*flyHeight), moveSpeed * Time.deltaTime * speedMod);
+                }
                 attackCounter -= Time.deltaTime;
                 if(attackCounter<=0)
                 {
