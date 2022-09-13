@@ -241,10 +241,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7368cadd8f4ca6439dd81b3f4a9f2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.8
+  moveSpeed: 1.1
   speedMod: 1
   timeBetweenAttacks: 0.4
   damagePerAttack: 1.2
+  isFlying: 0
+  flyHeight: 0
 --- !u!114 &-2512037024511606117
 MonoBehaviour:
   m_ObjectHideFlags: 0

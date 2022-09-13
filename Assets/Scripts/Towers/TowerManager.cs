@@ -70,6 +70,10 @@ public class TowerManager : MonoBehaviour
 
                          UIController.instance.notEnoughMoneyWarning.SetActive(false);
 
+                         AudioManager.instance.PlaySFX(1);
+                         
+
+
                     }
                 }
 

@@ -37,6 +37,10 @@ public class Castle : MonoBehaviour
 
             gameObject.SetActive(false);
             currentHealth = 0;
+            AudioManager.instance.PlaySFX(7);
+        }else
+        {
+            AudioManager.instance.PlaySFX(5);
         }
 
         healthSlider.value = currentHealth;

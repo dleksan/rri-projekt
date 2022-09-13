@@ -90,11 +90,15 @@ public class UIController : MonoBehaviour
     {
         towerUpgradePanel.gameObject.SetActive(false);
 
-        TowerManager.instance.selectedTower.rangeModel.SetActive(false);
-        TowerManager.instance.selectedTower = null;
+        if (TowerManager.instance.selectedTower != null)
+        {
+            TowerManager.instance.selectedTower.rangeModel.SetActive(false);
+            TowerManager.instance.selectedTower = null;
+        }
 
         TowerManager.instance.selectedTowerEffect.SetActive(false);
 
         notEnoughMoneyWarning.SetActive(false);
     }
 }
+

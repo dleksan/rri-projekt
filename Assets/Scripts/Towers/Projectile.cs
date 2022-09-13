@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         theRB.velocity = transform.forward * moveSpeed;
+        AudioManager.instance.PlaySFX(8);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +28,8 @@ public class Projectile : MonoBehaviour
         }
 
         Instantiate(impactEffect, transform.position, transform.rotation);
+
+        AudioManager.instance.PlaySFX(4);
         Destroy(gameObject);
     }
 

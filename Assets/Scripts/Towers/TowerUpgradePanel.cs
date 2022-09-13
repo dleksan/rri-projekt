@@ -40,6 +40,8 @@ public class TowerUpgradePanel : MonoBehaviour
         Destroy(TowerManager.instance.selectedTower.gameObject);
 
         UIController.instance.CloseTowerUpgradePanel();
+
+        AudioManager.instance.PlaySFX(2);
     }
 
     public void UpgradeRange()
@@ -54,6 +56,8 @@ public class TowerUpgradePanel : MonoBehaviour
                 SetupPanel();
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
+
+                AudioManager.instance.PlaySFX(0);
             }
 
             else
@@ -76,6 +80,8 @@ public class TowerUpgradePanel : MonoBehaviour
                 SetupPanel();
 
                 UIController.instance.notEnoughMoneyWarning.SetActive(false);
+
+                AudioManager.instance.PlaySFX(0);
             }
 
             else

@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public string newGameScene;
+    public string levelSelectScene;
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager.instance.PlayMenuMusic();
     }
 
     // Update is called once per frame
@@ -26,6 +27,11 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit Game");
+        
+    }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene(levelSelectScene);
     }
 }

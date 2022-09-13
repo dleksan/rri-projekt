@@ -49,7 +49,7 @@ MonoBehaviour:
   moveSpeed: 180
   targetPoint: {x: 0, y: 0, z: 0}
   explodeEffect: {fileID: 1523721378560271181, guid: 2024e008f3c83084fb0d203b4ee4cb2a, type: 3}
-  damageAmount: 20
+  damageAmount: 13
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 64

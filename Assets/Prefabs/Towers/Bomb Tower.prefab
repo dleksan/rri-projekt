@@ -5190,7 +5190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 3
-  fireRate: 2.5
+  fireRate: 3
   whatIsEnemy:
     serializedVersion: 2
     m_Bits: 64

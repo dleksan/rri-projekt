@@ -253,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 7836931028436437758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 458970396321925454}
   m_Father: {fileID: 2973629886484225835}
@@ -323,10 +323,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.35
-  m_Height: 1.0483334
+  m_Radius: 0.25
+  m_Height: 0.45
   m_Direction: 1
-  m_Center: {x: 0, y: 0.25404835, z: 0}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!114 &3043061188333003967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,10 +339,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7368cadd8f4ca6439dd81b3f4a9f2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.4
+  moveSpeed: 0.45
   speedMod: 1
   timeBetweenAttacks: 0.5
   damagePerAttack: 3
+  isFlying: 0
+  flyHeight: 0
 --- !u!114 &249259671979579355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,9 +357,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7341aea18d2c88844ba7e14225713545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalHealth: 100
+  totalHealth: 120
   healthBar: {fileID: 617386305567788045}
-  moneyOnDeath: 100
+  moneyOnDeath: 110
 --- !u!1 &8928419204509097611
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 707158807605527018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8968028411297217668}
   m_Father: {fileID: 6086667017277381540}
@@ -487,10 +487,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.35
-  m_Height: 1.0483334
+  m_Radius: 0.25
+  m_Height: 0.5860085
   m_Direction: 1
-  m_Center: {x: 0, y: 0.25404835, z: 0}
+  m_Center: {x: 0, y: 0.22418526, z: 0}
 --- !u!114 &8067016283161613658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,10 +503,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7368cadd8f4ca6439dd81b3f4a9f2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.4
+  moveSpeed: 0.5
   speedMod: 1
   timeBetweenAttacks: 0.3
   damagePerAttack: 3
+  isFlying: 0
+  flyHeight: 0
 --- !u!114 &6103365811200525760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,7 +523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalHealth: 110
   healthBar: {fileID: 5061583462727722277}
-  moneyOnDeath: 110
+  moneyOnDeath: 120
 --- !u!1001 &8934700954918738799
 PrefabInstance:
   m_ObjectHideFlags: 0

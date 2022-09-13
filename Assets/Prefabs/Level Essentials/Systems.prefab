@@ -5017,31 +5017,6 @@ MonoBehaviour:
   wavesToSpawn:
   - enemySpawnOrder:
     - {fileID: 2999891553466986017, guid: d87002cc983124847a788fd8c735b93c, type: 3}
-    - {fileID: 2999891553466986017, guid: d87002cc983124847a788fd8c735b93c, type: 3}
-    - {fileID: 2361504274173689013, guid: 7c4820af2661e7e4f9d370e0d4812f95, type: 3}
-    - {fileID: 3043061188333003967, guid: 8261825cafc663147b69d5d4ea816a66, type: 3}
-    timeBetweenSpawns: 1
-    timeToNextWave: 10
-    shouldDisplayWave: 1
-  - enemySpawnOrder:
-    - {fileID: 8300594755351648310, guid: 9a9c88ca29882754d93f37859a9502b3, type: 3}
-    - {fileID: 8300594755351648310, guid: 9a9c88ca29882754d93f37859a9502b3, type: 3}
-    - {fileID: 2999891553466986017, guid: d87002cc983124847a788fd8c735b93c, type: 3}
-    - {fileID: 2361504274173689013, guid: 7c4820af2661e7e4f9d370e0d4812f95, type: 3}
-    - {fileID: 3043061188333003967, guid: 8261825cafc663147b69d5d4ea816a66, type: 3}
-    - {fileID: 8067016283161613658, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
-    timeBetweenSpawns: 1
-    timeToNextWave: 10
-    shouldDisplayWave: 1
-  - enemySpawnOrder:
-    - {fileID: 7242505593497584820, guid: 7a25c946063326a4f9b3f89887809885, type: 3}
-    - {fileID: 7242505593497584820, guid: 7a25c946063326a4f9b3f89887809885, type: 3}
-    - {fileID: 3043061188333003967, guid: 8261825cafc663147b69d5d4ea816a66, type: 3}
-    - {fileID: 8067016283161613658, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
-    - {fileID: 8067016283161613658, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
-    - {fileID: 2361504274173689013, guid: 7c4820af2661e7e4f9d370e0d4812f95, type: 3}
-    - {fileID: 7242505593497584820, guid: 7a25c946063326a4f9b3f89887809885, type: 3}
-    - {fileID: 8067016283161613658, guid: f37e7e47d8c29f146a9fa5eb83cade3e, type: 3}
     timeBetweenSpawns: 1
     timeToNextWave: 0
     shouldDisplayWave: 1
@@ -5104,7 +5079,7 @@ MonoBehaviour:
     m_Bits: 128
   whatIsObstacle:
     serializedVersion: 2
-    m_Bits: 1792
+    m_Bits: 5888
   topSafePercent: 12
   selectedTower: {fileID: 0}
   selectedTowerEffect: {fileID: 379887140}
@@ -5151,7 +5126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3df2e02673d894a97391092c35cd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMoney: 500
+  currentMoney: 300
 --- !u!1 &6182470935386487613
 GameObject:
   m_ObjectHideFlags: 0

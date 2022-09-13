@@ -18,17 +18,18 @@ public class LevelManager : MonoBehaviour
 
     public List<EnemyHealthController> activeEnemies = new List<EnemyHealthController>();
 
-    private SimpleEnemySpawner enemySpawner;
+    private EnemyWaveSpawner enemySpawner;
 
     public string nextLevel;
     // Start is called before the first frame update
     void Start()
     {
         theCastle = FindObjectOfType<Castle>();
-        enemySpawner = FindObjectOfType<SimpleEnemySpawner>();
+        enemySpawner = FindObjectOfType<EnemyWaveSpawner>();
 
         levelActive = true;
 
+        AudioManager.instance.PlayBGM();
     }
 
     // Update is called once per frame
@@ -45,7 +46,12 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if(activeEnemies.Count==0 && enemySpawner.amountToSpawn==0)
+        bool wavesComplete = false;
+        if (enemySpawner.wavesToSpawn.Count==0)
+        {
+            wavesComplete = true;
+        }
+        if(activeEnemies.Count==0 && wavesComplete)
         {
             levelActive = false;
             levelVictory = true;

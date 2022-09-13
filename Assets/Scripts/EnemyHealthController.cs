@@ -17,6 +17,8 @@ public class EnemyHealthController : MonoBehaviour
         healthBar.value = totalHealth;
 
         LevelManager.instance.activeEnemies.Add(this);
+
+        AudioManager.instance.PlaySFX(3);
     }
 
     // Update is called once per frame
@@ -37,6 +39,8 @@ public class EnemyHealthController : MonoBehaviour
             MoneyManager.instance.GiveMoney(moneyOnDeath);
 
             LevelManager.instance.activeEnemies.Remove(this);
+
+            AudioManager.instance.PlaySFX(6);
         }
 
         healthBar.value = totalHealth;
